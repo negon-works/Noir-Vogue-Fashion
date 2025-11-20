@@ -1,0 +1,142 @@
+/* Reset & body */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Roboto', sans-serif; color:#fff; background:#000; overflow-x:hidden; }
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: transparent; /* hidden on hero */
+  transition: background 0.3s;
+}
+
+nav.scrolled {
+  background: rgba(0,0,0,0.8); /* appears when scrolled */
+}
+
+nav .logo { font-family: 'Playfair Display', serif; font-size:1.5rem; font-weight:700; }
+nav .nav-links { list-style:none; display:flex; gap:30px; }
+nav .nav-links li a { color:#fff; text-decoration:none; transition: color 0.3s; }
+nav .nav-links li a:hover { color:#8b5cf6; }
+
+/* Sections */
+section {
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  flex-direction:column;
+  padding:0 20px;
+}
+
+/* Hero */
+.hero {
+  background: url('hero.webp') center/cover no-repeat;
+  background-attachment: fixed;
+}
+.hero-content { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:15px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size:4rem; font-weight:700; }
+.hero p { font-size:1.5rem; color:#ddd; max-width:600px; }
+
+/* Collections */
+.collections {
+  background:#111;
+}
+.collections h2 { font-size:2.5rem; margin-bottom:40px; font-family:'Playfair Display', serif; }
+.collection-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+  align-items:center;
+}
+.collection-card {
+  width:300px;
+  height:400px;
+  background:#222;
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.collection-card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition: transform 0.3s ease;
+}
+.collection-card:hover img { transform: scale(1.05); }
+
+/* Lookbook */
+.lookbook { background:#000; }
+.lookbook h2 { font-size:2.5rem; margin-bottom:40px; font-family:'Playfair Display', serif; }
+.lookbook-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+  align-items:center;
+}
+.lookbook-card {
+  width:250px;
+  height:350px;
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.lookbook-card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition: transform 0.3s ease;
+}
+.lookbook-card:hover img { transform: scale(1.05); }
+
+/* About */
+.about { background:#111; display:flex; justify-content:center; align-items:center; }
+.about-content { max-width:700px; text-align:center; }
+.about-content h2 { font-size:2.5rem; margin-bottom:20px; font-family:'Playfair Display', serif; }
+.about-content p { font-size:1.2rem; line-height:1.6; color:#ccc; }
+
+/* Contact */
+.contact { background:#000; display:flex; justify-content:center; align-items:center; }
+.contact-content { display:flex; gap:50px; flex-wrap:wrap; justify-content:center; align-items:center; }
+.contact-form { flex:1; min-width:300px; display:flex; flex-direction:column; gap:15px; }
+.contact-form h2 { font-size:2rem; margin-bottom:20px; font-family:'Playfair Display', serif; }
+.contact-form input, .contact-form textarea { width:100%; padding:12px; border-radius:6px; border:none; margin-bottom: 10px;}
+.contact-form textarea { resize:none; height:120px; }
+.contact-form button { padding:12px 20px; border:none; border-radius:6px; background:#8b5cf6; color:#fff; cursor:pointer; width: 100%; }
+.contact-map { flex:1; min-width:300px; border-radius:10px; overflow:hidden; }
+.contact-map iframe { width:100%; height:100%; min-height:300px; }
+
+/* Smooth scroll centering for nav links */
+html { scroll-behavior:smooth; }
+
+/* Responsive */
+@media (max-width:768px){
+  nav { padding:15px 20px; }
+  .hero h1 { font-size:3rem; }
+  .hero p { font-size:1.2rem; }
+  .collection-card { width:200px; height:300px; }
+  .lookbook-card { width:180px; height:250px; }
+  .contact-content { flex-direction:column; gap:20px; }
+}
+@media (max-width:480px){
+  .hero h1 { font-size:2rem; }
+  .hero p { font-size:1rem; }
+  .collection-card { width:160px; height:220px; }
+  .lookbook-card { width:140px; height:200px; }
+}
