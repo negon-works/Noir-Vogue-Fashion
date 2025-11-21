@@ -24,6 +24,11 @@ nav .logo { font-family: 'Playfair Display', serif; font-size:1.5rem; font-weigh
 nav .nav-links { list-style:none; display:flex; gap:30px; }
 nav .nav-links li a { color:#fff; text-decoration:none; transition: color 0.3s; }
 nav .nav-links li a:hover { color:#8b5cf6; }
+#work,
+#service,
+#contact {
+  scroll-margin-top: 90px;
+}
 
 /* Sections */
 section {
@@ -217,4 +222,5 @@ html { scroll-behavior:smooth; }
     display: none;
   }
 }
+
 
