@@ -28,7 +28,7 @@ nav .nav-links li a:hover { color:#8b5cf6; }
 #collections,
 #lookbook,
 #contact {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 50px;
 }
 
 /* Sections */
@@ -223,6 +223,7 @@ html { scroll-behavior:smooth; }
     display: none;
   }
 }
+
 
 
 
