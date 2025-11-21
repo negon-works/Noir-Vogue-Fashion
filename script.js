@@ -1,26 +1,35 @@
-// Smooth scroll
-document.querySelectorAll('nav a').forEach(link=>{
-  link.addEventListener('click', e=>{
+// Smooth scroll for nav links
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    const target = document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// Nav background on scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll',()=>{
-  if(window.scrollY>50) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
+// Add class on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > window.innerHeight * 0.5) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
 });
 
-// GSAP ScrollTrigger for Collections sliding over Hero
-gsap.to(".collections",{
-  y: "-100%",
-  ease: "none",
-  scrollTrigger:{
-    trigger:".collections",
-    start:"top bottom",
-    end:"top top",
-    scrub:true
-  }
+// Mobile menu toggle
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("open");
+});
+
+// Close menu when a mobile link is clicked
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("open");
+  });
 });
