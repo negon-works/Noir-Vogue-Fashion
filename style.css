@@ -140,3 +140,81 @@ html { scroll-behavior:smooth; }
   .collection-card { width:160px; height:220px; }
   .lookbook-card { width:140px; height:200px; }
 }
+/* ------------------------------
+   HAMBURGER MENU
+--------------------------------*/
+.hamburger {
+  width: 35px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.35s ease;
+}
+
+/* Animation (turns into X) */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+  text-align: center;
+  transition: right 0.4s ease;
+  z-index: 150;
+}
+
+.mobile-menu li a {
+  color: white;
+  font-size: 1.6rem;
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.mobile-menu li a:hover {
+  color: #8b5cf6;
+}
+
+/* When open */
+.mobile-menu.open {
+  right: 0;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  nav .nav-links {
+    display: none;
+  }
+}
+
