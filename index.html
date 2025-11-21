@@ -105,45 +105,8 @@
     </div>
   </div>
 </section>
-
-<script>
-// Nav smooth scroll
-document.querySelectorAll('nav a').forEach(link=>{
-  link.addEventListener('click', e=>{
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-  });
-});
-</script>
-<script>
-  const nav = document.querySelector('nav');
-
-window.addEventListener('scroll', () => {
-  if(window.scrollY > window.innerHeight * 0.5){
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-});
-</script>
-<script>
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("open");
-});
-
-// Close menu when clicking a link
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    mobileMenu.classList.remove("open");
-  });
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
+
 
